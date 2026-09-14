@@ -114,8 +114,8 @@ CREATE TABLE emprestimo (
 -- Repare no padrão: quando tipo='livro', "autor" é preenchido e "edicao"
 -- fica NULL; quando tipo='revista', é o contrário.
 INSERT INTO item (codigo, titulo, tipo, autor, edicao, disponivel) VALUES
-    ('L001', 'Dom Casmurro',      'livro',   'Machado de Assis', NULL,         TRUE),
-    ('L002', 'O Cortiço',         'livro',   'Aluísio Azevedo',  NULL,         FALSE), -- já emprestado
+    ('L001', 'Harry Potter A Ordem da Fenix',      'livro',   'J.K Rowling', NULL,         TRUE),
+    ('L002', 'O Horizonte Mora em dia cinza',         'livro',   'Tatielle Katluryn',  NULL,         FALSE), -- já emprestado
     ('R001', 'Superinteressante', 'revista', NULL,               'Ed. 450',    TRUE),
     ('R002', 'Veja',              'revista', NULL,               'Ed. 2800',   FALSE); -- já emprestado
 
@@ -128,7 +128,7 @@ INSERT INTO usuario (nome, tipo, limite_itens) VALUES
 -- 2 empréstimos: um em aberto (para testar a consulta 2 e a 4),
 -- e um já devolvido com multa (para testar a consulta 3).
 INSERT INTO emprestimo (item_id, usuario_id, data_retirada, data_devolucao_prevista, data_devolucao, valor_multa) VALUES
-    -- Empréstimo EM ABERTO: item_id=2 ("O Cortiço"), usuario_id=1 (Maria).
+    -- Empréstimo EM ABERTO: item_id=2 ("O Horizonte Mora em dia cinza"), usuario_id=1 (Maria).
     -- data_devolucao é NULL porque ela ainda não devolveu.
     (2, 1, '2026-08-01', '2026-08-15', NULL,         0.00),
 
